@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/anix001/node_crash_course#readme",
   "dependencies": {
-    "date-fns": "^2.29.3"
+    "date-fns": "^2.29.3",
+    "uuid": "^9.0.0"
   }
 }
