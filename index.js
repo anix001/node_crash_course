@@ -11,5 +11,5 @@ myEmitter.on('log', (msg)=> logEvents(msg));
 
 setTimeout(()=>{
     //Emit event
-    myEmitter.emit('log', 'log event emitted!')
-})
+    myEmitter.emit('log', 'log event emitted!', 'eventLog.txt')
+},2000)
