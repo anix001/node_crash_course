@@ -1,0 +1,3 @@
+20221016	09:52:07	b67d8803-b8df-4f3c-a463-dabbc6e25396	TypeError: res.accepts is not a function
+20221016	09:52:24	6cff7a18-090f-4fce-bb62-87d68c1d4011	TypeError: res.accepts is not a function
+20221016	09:53:47	491ffebc-5063-44ba-aefe-6cce60141130	TypeError: res.accepts is not a function
