@@ -3,3 +3,4 @@
 20221016	09:53:47	491ffebc-5063-44ba-aefe-6cce60141130	TypeError: res.accepts is not a function
 20221017	10:36:57	b03ae9d2-5b75-4ec5-b12e-f684169a811b	Error: ENOENT: no such file or directory, stat '/home/anix001/Documents/backend/node-crash-course/views/subdir/new-page.html'
 20221017	10:38:55	fc9a4581-d1ec-4ee7-bbd3-a72ce2ef9dab	Error: ENOENT: no such file or directory, stat '/home/anix001/Documents/backend/node-crash-course/views/subdir/new-page.html'
+20221017	18:05:27	fe705f5e-a5e2-4cb1-9249-59a366851e1b	SyntaxError: Unexpected string in JSON at position 30

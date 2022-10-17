@@ -3,32 +3,17 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3500;
 const { logger } = require(path.join(__dirname, "middleware", "logEvents.js"));
-const errotHandler = require(path.join(
+const errorHandler = require(path.join(
   __dirname,
   "middleware",
   "errorHandler.js"
 ));
 const cors = require("cors");
+const corsOptions = require('./config/corsOptions')
 
 // custom middleware logger
 app.use(logger);
 
-//Cross Origin Resource Sharing
-const whitelist = [
-  "https://www.google.com",
-  "http://127.0.0.1:5500",
-  "http://localhost:3500",
-];
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  optionsSuccessStatus: 200,
-};
 app.use(cors(corsOptions));
 
 //built-in middleware to handle urlencoded data
@@ -92,6 +77,6 @@ app.all("*", (req, res) => {
   }
 });
 
-app.use(errotHandler);
+app.use(errorHandler);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}.`));
