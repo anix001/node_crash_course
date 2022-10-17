@@ -1,3 +1,5 @@
 20221016	09:52:07	b67d8803-b8df-4f3c-a463-dabbc6e25396	TypeError: res.accepts is not a function
 20221016	09:52:24	6cff7a18-090f-4fce-bb62-87d68c1d4011	TypeError: res.accepts is not a function
 20221016	09:53:47	491ffebc-5063-44ba-aefe-6cce60141130	TypeError: res.accepts is not a function
+20221017	10:36:57	b03ae9d2-5b75-4ec5-b12e-f684169a811b	Error: ENOENT: no such file or directory, stat '/home/anix001/Documents/backend/node-crash-course/views/subdir/new-page.html'
+20221017	10:38:55	fc9a4581-d1ec-4ee7-bbd3-a72ce2ef9dab	Error: ENOENT: no such file or directory, stat '/home/anix001/Documents/backend/node-crash-course/views/subdir/new-page.html'
