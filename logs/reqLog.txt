@@ -203,3 +203,10 @@
 20221019	11:30:09	d1852f03-a719-4ae0-aba1-afd7e20751cf	POST	undefined	/auth
 20221019	11:30:13	297e36a7-b82c-4402-915d-cbb0ab2461df	GET	undefined	/logout
 20221019	11:30:40	46bb50a6-823d-47da-9dce-c78bf722414f	GET	undefined	/refresh
+20221019	12:58:29	6229cc62-24b1-47b7-89b4-1c8e99b864e1	POST	undefined	/register
+20221019	14:15:39	c8a512c7-f971-40e7-b362-8286860850d9	POST	undefined	/auth
+20221019	14:16:39	6735440f-04dc-4299-8bf2-0ad2c6384fa8	POST	undefined	/employees
+20221019	14:18:02	9b09b1f5-d752-4606-bd58-c34637dfe6d7	POST	undefined	/employees
+20221019	14:18:21	dba52b1e-eb49-43a3-a35e-de56b8bd3ebb	POST	undefined	/auth
+20221019	14:18:35	769d4af6-68d5-41b4-ab05-8fb8057c1db6	POST	undefined	/employees
+20221019	14:19:34	f800cfd1-85fb-4e8d-b11d-ba818eb5c320	DELETE	undefined	/employees
