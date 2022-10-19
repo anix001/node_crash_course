@@ -9,11 +9,19 @@ const errorHandler = require(path.join(
   "errorHandler.js"
 ));
 const cors = require("cors");
-const corsOptions = require('./config/corsOptions')
+const corsOptions = require("./config/corsOptions");
+const verifyJWT = require("./middleware/verifyJWT");
+const cookieParser = require("cookie-parser");
+const credentials = require("./middleware/credentials");
 
 // custom middleware logger
 app.use(logger);
 
+//handle options credentials check - before CORS!
+//and fetch cookies credentials requirement
+app.use(credentials);
+
+//cross-origin resource sharing
 app.use(cors(corsOptions));
 
 //built-in middleware to handle urlencoded data
@@ -23,6 +31,9 @@ app.use(express.urlencoded({ extended: false }));
 
 //built-in middleware for json
 app.use(express.json());
+
+//middleware for cookie
+app.use(cookieParser());
 
 // cross origin Resource Sharing -third party middleware
 app.use(cors());
@@ -35,10 +46,14 @@ app.use("/subdir", express.static(path.join(__dirname, "/public")));
 app.use("/", require("./routes/root"));
 app.use("/subdir", require("./routes/subdir"));
 //routs-for api
-app.use("/employees", require('./routes/api/employees'));
-app.use("/register", require('./routes/api/register'));
-app.use('/auth', require('./routes/api/auth'));
- 
+app.use("/register", require("./routes/api/register"));
+app.use("/auth", require("./routes/api/auth"));
+app.use("/refresh", require("./routes/api/refresh"));
+app.use("/logout", require("./routes/api/logout"));
+
+//verifyJWT middleware is used for employee api to verify accesstoken
+app.use(verifyJWT);
+app.use("/employees", require("./routes/api/employees"));
 
 //Route Handlers
 // app.get(
