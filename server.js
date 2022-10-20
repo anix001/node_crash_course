@@ -36,7 +36,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // cross origin Resource Sharing -third party middleware
-app.use(cors());
+// app.use(cors());
 
 //serve static files
 app.use("/", express.static(path.join(__dirname, "/public")));
