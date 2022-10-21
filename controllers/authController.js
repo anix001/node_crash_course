@@ -23,16 +23,16 @@ const handleLogin = async (req, res) => {
   //evaluate password
   const matchPassword = await bcrypt.compare(pwd, foundUser.password);
   if (matchPassword) {
-    const roles = Object.values(foundUser.roles);
+    const roles = Object.values(foundUser.roles).filter(Boolean);
     //create jwt
     const accessToken = jwt.sign(
       //payload -> in our case username
-      { 
-        "userInfo":{
+      {
+        userInfo: {
           username: foundUser?.username,
-          roles: roles
-        }
-       },
+          roles: roles,
+        },
+      },
       //access secret key
       "" + process.env.ACCESS_TOKEN_SECRET,
       //access token expire time
@@ -61,11 +61,11 @@ const handleLogin = async (req, res) => {
     //setting cookie as http so it will not be vulnerable
     res.cookie("jwt", refreshToken, {
       httpOnly: true,
-      sameSite:'None',
-      secure:true,
+      sameSite: "None",
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000,
     });
-    res.json({ accessToken });
+    res.json({ accessToken, roles });
   } else {
     res.sendStatus(401);
   }
