@@ -54,6 +54,7 @@ app.use("/logout", require("./routes/api/logout"));
 //verifyJWT middleware is used for employee api to verify accesstoken
 app.use(verifyJWT);
 app.use("/employees", require("./routes/api/employees"));
+app.use("/users", require("./routes/api/users"));
 
 //Route Handlers
 // app.get(
